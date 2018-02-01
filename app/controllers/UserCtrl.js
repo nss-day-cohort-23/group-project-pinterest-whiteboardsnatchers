@@ -1,13 +1,21 @@
 'use strict';
 
-angular.module("pinterest").controller("UserCtrl", function($scope, UserFactory) {
+angular.module("pinterest").controller("UserCtrl", function($scope, UserFactory, $window) {
     $scope.message = "This is working";
     console.log("This is working");
 
+    // 
     $scope.login = () => {
         UserFactory.googleLogin()
             .then((user) => {
-                console.log("Is this working?");
+                $window.location.href = '#!/BoardList';
             });
+    };
+
+    $scope.logout = () => {
+        UserFactory.googleLogout()
+        .then((user)=>{
+            console.log('User Logged out', user);
+        });
     };
 });
