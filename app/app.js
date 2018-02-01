@@ -8,6 +8,14 @@ angular.module("pinterest", ["ngRoute"])
             templateUrl: "partials/user.html",
             controller: "UserCtrl"
         })
+        .when('/newBoard',{
+            templateUrl: 'partials/newBoard.html',
+            controller: 'NewBoardCtrl'
+        })
+        .when('/BoardList',{
+            templateUrl: 'partials/BoardList.html',
+            controller: 'BoardListCtrl'
+        })
         .otherwise("/");
 })
 .run(FBCreds => {
@@ -17,4 +25,4 @@ angular.module("pinterest", ["ngRoute"])
         authDomain: creds.authDomain
     };
     firebase.initializeApp(authConfig);
-});
+}); 

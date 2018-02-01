@@ -2,9 +2,9 @@
 
 angular.module("pinterest").factory("UserFactory", (FBCreds, $q) => {
     let currentUser = null;
+    const provider = new firebase.auth.GoogleAuthProvider();
 
     let googleLogin = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
 
     console.log("hi");
     return firebase
@@ -12,5 +12,9 @@ angular.module("pinterest").factory("UserFactory", (FBCreds, $q) => {
         .signInWithPopup(provider);
     };
 
-    return {googleLogin};
+    let googleLogout = () => {
+        return firebase.auth().signOut();
+    };
+
+    return {googleLogin , googleLogout};
 });
