@@ -3,7 +3,7 @@
 
 angular
   .module("pinterest")
-  .controller("BoardCtrl", function ($scope, PinFactory, $routeParams, $window) {
+  .controller("BoardCtrl", function ($scope, PinFactory, $routeParams, $window, $route) {
 
 
     PinFactory.getBoardPins()
@@ -26,6 +26,14 @@ angular
           // $window.location.href = '#!/BoardList';
           
         });
+    };
+
+    $scope.DeletePin = (pinId) => {
+      PinFactory.deletePin(pinId)
+      .then(()=>{
+        PinFactory.getBoardPins();
+        $route.reload();
+      });
     };
 
   });
