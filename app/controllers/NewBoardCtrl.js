@@ -11,6 +11,10 @@ angular
             $scope.board.uid  = firebase.auth().currentUser.uid;
             BoardFactory.addNewBoard($scope.board)
                 .then((data) => {
+<<<<<<< HEAD
+=======
+                    console.log('newboard', data);
+>>>>>>> master
                     $window.location.href = '#!/BoardList';
                 });
         };

@@ -16,37 +16,44 @@ let isIn = (UserFactory) => {
   });
 };
 angular.module("pinterest", ["ngRoute"])
-.constant("FBUrl", "https://wbss-38e4b.firebaseio.com/")
-.config($routeProvider => {
+  .constant("FBUrl", "https://wbss-38e4b.firebaseio.com/")
+  .config($routeProvider => {
     $routeProvider
-        .when('/login', {
-            templateUrl: "partials/user.html",
-            controller: "UserCtrl"
-        })
-        .when('/BoardList',{
-          templateUrl: 'partials/BoardList.html',
-          controller: 'BoardListCtrl',
-          resolve: { isIn }
+      .when('/login', {
+        templateUrl: "partials/user.html",
+        controller: "UserCtrl"
       })
-        .when('/newBoard',{
-            templateUrl: 'partials/newBoard.html',
-            controller: 'NewBoardCtrl',
-            resolve: { isIn }
+      .when('/BoardList', {
+        templateUrl: 'partials/BoardList.html',
+        controller: 'BoardListCtrl',
+        resolve: { isIn }
+      })
 
-        })
-        .when('/board/:id',{
-          templateUrl: 'partials/board.html',
-          controller: 'BoardCtrl',
-          resolve: { isIn }
+      .when('/newBoard', {
+        templateUrl: 'partials/newBoard.html',
+        controller: 'NewBoardCtrl',
+        resolve: { isIn }
+      })
+      .when('/newPin', {
+        templateUrl: 'partials/new-pin.html',
+        controller: 'PinNewCtrl',
+        resolve: { isIn }
+      })
+      .when('/board/:id', {
+        templateUrl: 'partials/board.html',
+        controller: 'BoardCtrl',
+        resolve: { isIn }
 
-        })
-        .otherwise("/");
-})
-.run(FBCreds => {
+      })
+      .otherwise("/");
+  })
+
+
+  .run(FBCreds => {
     let creds = FBCreds;
     let authConfig = {
-        apiKey: creds.apiKey,
-        authDomain: creds.authDomain
+      apiKey: creds.apiKey,
+      authDomain: creds.authDomain
     };
     firebase.initializeApp(authConfig);
-}); 
+  }); 
