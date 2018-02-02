@@ -2,7 +2,7 @@
 
 angular.module("pinterest").controller("UserCtrl", function($scope, UserFactory, $window) {
     $scope.message = "This is working";
-    console.log("This is working");
+    // console.log("This is working");
 
     // 
     $scope.login = () => {

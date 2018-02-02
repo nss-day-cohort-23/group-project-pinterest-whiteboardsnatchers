@@ -1,5 +1,20 @@
 'use strict';
 
+
+let isIn = (UserFactory) => {
+  new Promise((resolve, reject) => {
+    UserFactory.isLoggedIn().then(bool => {
+      console.log("user???", bool);
+      if (bool) {
+        console.log("Logged in . Go ahead");
+        resolve();
+      } else {
+        console.log("Not Logged IN . Go away");
+        reject();
+      }
+    });
+  });
+};
 angular.module("pinterest", ["ngRoute"])
 .constant("FBUrl", "https://wbss-38e4b.firebaseio.com/")
 .config($routeProvider => {
@@ -8,15 +23,18 @@ angular.module("pinterest", ["ngRoute"])
             templateUrl: "partials/user.html",
             controller: "UserCtrl"
         })
+        .when('/BoardList',{
+          templateUrl: 'partials/BoardList.html',
+          controller: 'BoardListCtrl',
+          resolve: { isIn }
+      })
         .when('/newBoard',{
             templateUrl: 'partials/newBoard.html',
-            controller: 'NewBoardCtrl'
+            controller: 'NewBoardCtrl',
+            resolve: { isIn }
+
         })
-        .when('/BoardList',{
-            templateUrl: 'partials/BoardList.html',
-            controller: 'BoardListCtrl'
-        })
-        .otherwise("/");
+        .otherwise("/login");
 })
 .run(FBCreds => {
     let creds = FBCreds;
