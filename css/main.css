@@ -1,9 +1,12 @@
 .links {
   list-style-type: none;
-  float: right; }
+  height: 3em; }
 
 .links li {
   display: inline-block;
   padding-right: 3em; }
+
+.navbar {
+  background-color: rgba(174, 194, 196, 0.226); }
 
 /*# sourceMappingURL=main.css.map */
