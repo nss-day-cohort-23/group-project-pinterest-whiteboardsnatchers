@@ -6,7 +6,7 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http) => {
       return $q((resolve, reject)=>{
         $http
           .get(`$FBURL/pins.json`, 
-        JSON.stringigy(pin))
+        JSON.stringify(pin))
         .then(pinData =>{
           console.log(pinData, 'Posted New Pin');
           resolve(pinData.data);
@@ -16,5 +16,7 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http) => {
         });
       });
     }
+
+    return{addNewPin};
 
 });
