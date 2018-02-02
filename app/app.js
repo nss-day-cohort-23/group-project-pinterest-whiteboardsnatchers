@@ -34,7 +34,13 @@ angular.module("pinterest", ["ngRoute"])
             resolve: { isIn }
 
         })
-        .otherwise("/login");
+        .when('/board/:id',{
+          templateUrl: 'partials/board.html',
+          controller: 'BoardCtrl',
+          resolve: { isIn }
+
+        })
+        .otherwise("/");
 })
 .run(FBCreds => {
     let creds = FBCreds;
