@@ -4,7 +4,8 @@
 
 .links li {
   display: inline-block;
-  padding-right: 3em; }
+  padding-right: 3em;
+  cursor: pointer; }
 
 .navbar {
   background-color: rgba(174, 194, 196, 0.226); }

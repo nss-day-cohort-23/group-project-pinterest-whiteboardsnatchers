@@ -37,7 +37,7 @@ angular
       } else {
         $scope.isLoggedIn = false;
         console.log('$scope.isLoggedIn',$scope.isLoggedIn);
-        $scope.apply(); //this is to make it update scope
+        $scope.$apply(); //this is to make it update scope
 
         $window.location.href = "#!/login";
       }
