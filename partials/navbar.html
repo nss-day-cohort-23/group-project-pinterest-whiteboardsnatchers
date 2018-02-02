@@ -1,0 +1,14 @@
+
+<nav class="navbar" ng-controller="NavCtrl">
+ 
+    <ul class="links">
+        <li  ng-repeat="item in navItems">
+          <!-- removed href in the <a> tags since we don't want to trigger the load. Left as anchor tag for bootstrap -->
+              <a href={{item.url}}>{{item.name}}</a>
+
+        </li>
+      </ul>
+</nav>
+
+
+
