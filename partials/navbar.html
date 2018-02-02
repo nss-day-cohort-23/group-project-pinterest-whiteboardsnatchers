@@ -4,7 +4,7 @@
     <div ng-show="isUserActive('/login')"></div>
 
     <ul class="links">
-        <li  ng-repeat="item in navItems">
+        <li class="link" ng-repeat="item in navItems">
 
               <a ng-show="{{item.bang}}isLoggedIn" ng-click="navigate(item.url)">{{item.name}}</a>
               <!-- <a href={{item.url}}>{{item.name}}</a> -->
