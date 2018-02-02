@@ -23,10 +23,10 @@ angular
                     .get(`${FBUrl}/boards.json?orderBy="uid"&equalTo="${UserFactory.getCurrentUser()}"`)
                     .then(({ data }) => {
                         let boardArr = Object.keys(data).map(boardKey => {
-                            console.log('taskKey', boardKey);
                             data[boardKey].id = boardKey;
                             return data[boardKey];
                         });
+                        console.log(boardArr, 'boardArr');
                         resolve (boardArr);
 
                     });

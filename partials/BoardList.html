@@ -2,7 +2,7 @@
     <ul>
         {{sup}}
         <li ng-repeat="board in boards">
-            {{board.title}}
+          <div> <a ng-href='#!/board/{{board.id}}'>{{board.title}}</a></div>
         </li>
     </ul>
 </div>
