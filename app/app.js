@@ -23,6 +23,10 @@ angular.module("pinterest", ["ngRoute"])
         templateUrl: "partials/user.html",
         controller: "UserCtrl"
       })
+      .when('/logout', {
+          templateUrl: "partials/user.html",
+          controller: "UserCtrl"
+      })
       .when('/BoardList', {
         templateUrl: 'partials/BoardList.html',
         controller: 'BoardListCtrl',
@@ -40,7 +44,7 @@ angular.module("pinterest", ["ngRoute"])
         resolve: { isIn }
 
       })
-      .otherwise("/");
+      .otherwise("/login");
   })
 
 

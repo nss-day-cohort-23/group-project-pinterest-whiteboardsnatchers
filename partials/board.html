@@ -1,25 +1,30 @@
-<div class="col-xs-12 newPinCard">
-    <h1>Add To Your Board</h1>
-    <div class="form-group imageDiv">
-        <label>Add an Image</label>
-        <input type="text" class="form-control" ng-model="pin.link" placeholder="Some cool pics" />
-    </div>
-    <div class="form-group titleDiv">
-        <label>Give it a title</label>
-        <input type="text" class="form-control" ng-model="pin.title" placeholder="Say something cool" />
-    </div>
-    <div class="form-group savePinDiv">
-        <button ng-click="SavePin()">Save Pin</button>
-    </div>
-    <div class="form-group savePinDiv">
-        <!-- <button ng-click="getPins()">Save Pin</button> -->
-    </div>
-    <div ng-repeat="pin in pins ">
-      <div class='pinDiv'>
-        <p>{{pin.title}}</p>
-        <img src='{{pin.link}}'></p>
-      </div>  
-       
+
+
+    <label>Add Pin
+        <input type="checkbox" ng-model="mustShow" />
+    </label>
+    <br />
+    <div ng-show="mustShow">
+        <div class="col-xs-12 newPinCard">
+            <div class="form-group imageDiv">
+                <input type="text" class="form-control" ng-model="pin.link" placeholder="Some cool pics" />
+            </div>
+            <div class="form-group titleDiv">
+                <label>Give it a title</label>
+                <input type="text" class="form-control" ng-model="pin.title" placeholder="Say something cool" />
+            </div>
+            <div class="form-group savePinDiv">
+                <button ng-click="SavePin()">Save Pin</button>
+            </div>
+            <div ng-repeat="pin in pins ">
+                <div class='pinDiv'>
+                  <p>{{pin.title}}</p>
+                  <img src='{{pin.link}}'></p>
+                </div>  
+            </div>
+        
+            
+        </div>
     </div>
 
-  </div>
+

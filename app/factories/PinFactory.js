@@ -2,20 +2,21 @@
 
 angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParams) => {
 
-    function addNewPin(pin){
-      return $q((resolve, reject)=>{
-        $http
-          .post(`${FBUrl}/pins.json`, 
+
+  function addNewPin(pin) {
+    return $q((resolve, reject) => {
+      $http
+        .post(`${FBUrl}pins.json`,
         JSON.stringify(pin))
-        .then(pinData =>{
-          // console.log(pinData, 'Posted New Pin');
+        .then(pinData => {
+          console.log(pinData, 'Posted New Pin');
           resolve(pinData.config.data);
         })
-        .catch(err =>{
+        .catch(err => {
           console.log(err);
         });
-      });
-    }
+    });
+  }
 
     function getBoardPins(){
       console.log($routeParams.id, 'rps');
@@ -34,5 +35,4 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParam
     }
 
     return{addNewPin, getBoardPins};
-
 });

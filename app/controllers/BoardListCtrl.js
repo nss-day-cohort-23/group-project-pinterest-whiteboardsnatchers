@@ -2,13 +2,13 @@
 
 angular
     .module('pinterest')
-    .controller('BoardListCtrl', function ($scope, BoardFactory) {
-        $scope.sup = 'sup';
-        
+    .controller('BoardListCtrl', function ($scope, BoardFactory, $routeParams, $window, PinFactory) {
+       
         BoardFactory.getBoards()
-        .then((data)=>{
+        .then((data)=>{ 
             $scope.boards = data;
             console.log('boards', $scope.boards);
             
         });
+
     });

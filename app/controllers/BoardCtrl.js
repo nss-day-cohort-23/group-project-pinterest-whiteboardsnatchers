@@ -1,5 +1,6 @@
 "use strict";
 
+
 angular
   .module("pinterest")
   .controller("BoardCtrl", function ($scope, PinFactory, $routeParams, $window) {
@@ -22,7 +23,8 @@ angular
     $scope.SavePin = () => {
       PinFactory.addNewPin($scope.pin)
         .then((data) => {
-          $window.location.href = '#!/BoardList';
+          // $window.location.href = '#!/BoardList';
+          
         });
     };
 
