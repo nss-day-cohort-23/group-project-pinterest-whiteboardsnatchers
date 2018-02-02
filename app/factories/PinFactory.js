@@ -22,7 +22,7 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParam
       console.log($routeParams.id, 'rps');
       return $q((resolve, reject )=>{
         $http
-        .get(`${FBUrl}/pins.json?orderBy="BoardId"&equalTo="${$routeParams.id}"`)
+        .get(`${FBUrl}pins.json?orderBy="BoardId"&equalTo="${$routeParams.id}"`)
         .then (({data})=>{
           console.log('pins', data);
           let pinArr = Object.keys(data).map(pinKey =>{
@@ -34,5 +34,18 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParam
       });
     }
 
-    return{addNewPin, getBoardPins};
+    function deletePin(pinId){
+      return $q((resolve, reject)=>{
+        $http
+        .delete(`${FBUrl}pins/${pinId}.json`)
+        .then((data) =>{
+          resolve(data);
+        })
+        .catch((err)=>{
+          reject(err);
+        });
+      });
+    }
+
+    return{addNewPin, getBoardPins, deletePin};
 });
