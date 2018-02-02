@@ -28,14 +28,19 @@ angular.module("pinterest", ["ngRoute"])
           controller: 'BoardListCtrl',
           resolve: { isIn }
       })
-        .when('/newBoard',{
-            templateUrl: 'partials/newBoard.html',
-            controller: 'NewBoardCtrl',
-            resolve: { isIn }
-
-        })
-        .otherwise("/login");
-})
+      .when('/newBoard',{
+        templateUrl: 'partials/newBoard.html',
+        controller: 'NewBoardCtrl',
+        resolve: { isIn }
+      })   
+      .when('/newPin', {
+      templateUrl: 'partials/new-pin.html',
+      controller: 'PinNewCtrl',
+      resolve: { isIn }
+      })   
+      .otherwise("/login");
+})        
+ 
 .run(FBCreds => {
     let creds = FBCreds;
     let authConfig = {

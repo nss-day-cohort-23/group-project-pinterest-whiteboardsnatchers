@@ -13,7 +13,7 @@ angular
             BoardFactory.addNewBoard($scope.board)
                 .then((data) => {
                     console.log('newboard', data);
-                    $window.location.href = '#!/BoardList.html';
+                    $window.location.href = '#!/BoardList';
                 });
         };
     });
