@@ -38,11 +38,6 @@ angular.module("pinterest", ["ngRoute"])
         controller: 'NewBoardCtrl',
         resolve: { isIn }
       })
-      .when('/newPin', {
-        templateUrl: 'partials/new-pin.html',
-        controller: 'PinNewCtrl',
-        resolve: { isIn }
-      })
       .when('/board/:id', {
         templateUrl: 'partials/board.html',
         controller: 'BoardCtrl',

@@ -2,21 +2,21 @@
 
 angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http) => {
 
-    function addNewPin(pin){
-      return $q((resolve, reject)=>{
-        $http
-          .get(`$FBURL/pins.json`, 
+  function addNewPin(pin) {
+    return $q((resolve, reject) => {
+      $http
+        .post(`${FBUrl}pins.json`,
         JSON.stringify(pin))
-        .then(pinData =>{
+        .then(pinData => {
           console.log(pinData, 'Posted New Pin');
-          resolve(pinData.data);
+          resolve(pinData.config.data);
         })
-        .catch(err =>{
+        .catch(err => {
           console.log(err);
         });
-      });
-    }
+    });
+  }
 
-    return{addNewPin};
+  return { addNewPin };
 
 });
