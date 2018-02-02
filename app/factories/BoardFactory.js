@@ -27,6 +27,8 @@ angular
                             data[boardKey].id = boardKey;
                             return data[boardKey];
                         });
+                        resolve (boardArr);
+
                     });
             });
         }
