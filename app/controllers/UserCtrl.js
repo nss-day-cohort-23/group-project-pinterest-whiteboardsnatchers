@@ -16,6 +16,7 @@ angular.module("pinterest").controller("UserCtrl", function($scope, UserFactory,
         UserFactory.googleLogout()
         .then((user)=>{
             console.log('User Logged out', user);
+            $window.location.href = '#!/';
         });
     };
 });

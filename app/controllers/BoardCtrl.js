@@ -9,7 +9,7 @@ angular.module('pinterest').controller('BoardCtrl', function ($scope, BoardFacto
     };
     $scope.SavePin = () => {
         PinFactory.addNewPin($scope.pin)
-            .then((user) => {
+            .then((data) => {
                 $window.location.href = '#!/BoardList';
             });
     };
