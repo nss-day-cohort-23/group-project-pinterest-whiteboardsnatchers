@@ -18,15 +18,10 @@
     </div>
   </div>
 </div>
-
-  <div ng-repeat="pin in pins">
-
-    <div class='pinDiv'>
-
+<div class="allPins">
+  <div class='pinDiv' ng-repeat="pin in pins">
       <p>{{pin.title}}</p>
       <img src='{{pin.link}}'>
-      <button ng-click='DeletePin(pin.id)'>Delete</button>
+      <button ng-click='DeletePin(pin.id)'>X</button>
     </div>
   </div>
-
-
