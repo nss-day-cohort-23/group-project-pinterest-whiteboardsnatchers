@@ -3,9 +3,9 @@
 angular
   .module('pinterest')
   .controller('NewBoardCtrl', function ($scope, BoardFactory, $window) {
-    $scope.sup = 'sup';
     $scope.board = {
-      title: ''
+      title: '',
+      image:''
     };
     $scope.CreateBoard = () => {
       $scope.board.uid = firebase.auth().currentUser.uid;
