@@ -68,8 +68,6 @@ ul {
 
 .deleteBoardBtn {
   cursor: pointer;
-}
-
   border-radius: 11%; // border: .2vw double darkslateblue;
   // max-width: 18vw
 }
@@ -119,6 +117,7 @@ ul {
 .pinDiv img {
   height: auto;
   width: 300px;
+  cursor: url(../images/sup.png), auto;
 }
 
 // Pin Title Font , Centering, and Boldening
@@ -131,11 +130,7 @@ ul {
 
 .pinDiv button {
   position: absolute;
-  cursor: url(../images/sup.png), auto;
 }
 
-.savePinDiv  button {
-  cursor: url(../images/sup.png), auto;
-}
 
 
