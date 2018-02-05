@@ -33,6 +33,21 @@ ul {
 .navbar {
   background-color: rgba(174, 194, 196, 0.226); }
 
+.boardPrev {
+  display: inline-block;
+  width: 27%;
+  height: 15rem;
+  margin: 2vw;
+  padding: .4vw;
+  border: 1px solid black;
+  border-radius: 11%; }
+  .boardPrev .imgBox {
+    height: 100%;
+    margin: .2em auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 11%; }
+
 .allPins {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

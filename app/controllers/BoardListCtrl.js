@@ -2,13 +2,21 @@
 
 angular
     .module('pinterest')
-    .controller('BoardListCtrl', function ($scope, BoardFactory, $routeParams, $window, PinFactory) {
+    .controller('BoardListCtrl', function ($scope, BoardFactory, $routeParams, $location, PinFactory) {
        
-        BoardFactory.getBoards()
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user){
+        BoardFactory.getBoards(user.uid)
         .then((data)=>{ 
-            $scope.boards = data;
-            console.log('boards', $scope.boards);
-            
+            $scope.boards = data;            
         });
+      }else{
+        console.log('there is no user');
+      }
+    });
 
+
+        $scope.redirect = (boardId) => {
+          $location.url(`/board/${boardId}`);
+        };
     });
