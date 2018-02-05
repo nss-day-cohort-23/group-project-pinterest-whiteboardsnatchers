@@ -9,7 +9,6 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParam
         .post(`${FBUrl}pins.json`,
         JSON.stringify(pin))
         .then(pinData => {
-          console.log(pinData, 'Posted New Pin');
           resolve(pinData.config.data);
         })
         .catch(err => {
@@ -18,34 +17,32 @@ angular.module('pinterest').factory('PinFactory', (FBUrl, $q, $http, $routeParam
     });
   }
 
-    function getBoardPins(){
-      console.log($routeParams.id, 'rps');
-      return $q((resolve, reject )=>{
-        $http
+  function getBoardPins() {
+    return $q((resolve, reject) => {
+      $http
         .get(`${FBUrl}pins.json?orderBy="BoardId"&equalTo="${$routeParams.id}"`)
-        .then (({data})=>{
-          console.log('pins', data);
-          let pinArr = Object.keys(data).map(pinKey =>{
+        .then(({ data }) => {
+          let pinArr = Object.keys(data).map(pinKey => {
             data[pinKey].id = pinKey;
             return data[pinKey];
           });
           resolve(pinArr);
         });
-      });
-    }
+    });
+  }
 
-    function deletePin(pinId){
-      return $q((resolve, reject)=>{
-        $http
+  function deletePin(pinId) {
+    return $q((resolve, reject) => {
+      $http
         .delete(`${FBUrl}pins/${pinId}.json`)
-        .then((data) =>{
+        .then((data) => {
           resolve(data);
         })
-        .catch((err)=>{
+        .catch((err) => {
           reject(err);
         });
-      });
-    }
+    });
+  }
 
-    return{addNewPin, getBoardPins, deletePin};
+  return { addNewPin, getBoardPins, deletePin };
 });

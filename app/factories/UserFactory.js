@@ -5,8 +5,6 @@ angular.module("pinterest").factory("UserFactory", (FBCreds, $q) => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   let googleLogin = () => {
-
-    console.log("hi");
     return firebase
       .auth()
       .signInWithPopup(provider);
@@ -18,11 +16,8 @@ angular.module("pinterest").factory("UserFactory", (FBCreds, $q) => {
 
   function isLoggedIn() {
     return $q((resolve, reject) => {
-      console.log("firing onAuthStateChanged");
       firebase.auth().onAuthStateChanged((user) => {
-        console.log("onAuthStateChanged finished");
         if (user) {
-          console.log("user", user);
           currentUser = user.uid;
           resolve(true);
         } else {

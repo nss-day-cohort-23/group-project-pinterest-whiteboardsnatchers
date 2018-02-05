@@ -49,6 +49,26 @@ ul {
   // border-radius: 11%;
   cursor: pointer; // border: .2vw double darkslateblue;
   // max-width: 18vw;
+  
+.imgBox {
+
+      // max-width: 90%;
+      height: 100%;
+      margin: .2em auto;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      border-radius: 11%;
+
+  
+    
+ 
+}
+
+.deleteBoardBtn {
+  cursor: pointer;
+
+}
+
   .imgBox {
     // max-width: 90%;
     height: 100%;
@@ -112,6 +132,7 @@ ul {
 .pinDiv img {
   height: auto;
   width: 300px;
+  cursor: url(../images/sup.png), auto;
 }
 
 // Pin Title Font , Centering, and Boldening
@@ -124,9 +145,10 @@ ul {
 
 .pinDiv button {
   position: absolute;
-  cursor: url(../images/sup.png), auto;
 }
+
 
 .savePinDiv button {
   cursor: url(../images/sup.png), auto;
 }
+

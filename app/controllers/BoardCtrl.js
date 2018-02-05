@@ -9,7 +9,6 @@ angular
     PinFactory.getBoardPins()
     .then(allPins => {
       if (allPins.length > 0) {
-        console.log(allPins, 'all the pins');
         $scope.pins = allPins;
       }
     });

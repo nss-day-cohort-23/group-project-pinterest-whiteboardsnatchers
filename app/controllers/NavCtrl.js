@@ -27,11 +27,8 @@ angular
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         $scope.$apply(($scope.isLoggedIn = true));
-        console.log("is the currentUser logged in", user.uid);
-        console.log('$scope.isLoggedIn',$scope.isLoggedIn);
       } else {
         $scope.isLoggedIn = false;
-        console.log('$scope.isLoggedIn',$scope.isLoggedIn);
         $scope.$apply(); //this is to make it update scope
 
         $window.location.href = "#!/login";
@@ -39,7 +36,6 @@ angular
     });
 
     $scope.navigate = navUrl => {
-      console.log("navUrl", navUrl);
       if (navUrl === "#!/logout") {
         UserFactory.googleLogout();
       } else {
