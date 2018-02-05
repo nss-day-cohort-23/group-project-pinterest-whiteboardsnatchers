@@ -48,5 +48,44 @@ ul {
   // margin-top: 3em;
 }
 
+// class for all pins. set up in grid
+.allPins {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 
+// class for individual pins. also set up in grid for button, img and title.
+.pinDiv{
+  display: grid;
+  grid-template-rows: 3;
+  border: 10px solid grey;
+  border-radius: 4px;
+  height: 450px;
+  width: 420px;
+}
+// image pin sizing
+.pinDiv img {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 300px;
+}
+// Pin Title Font , Centering, and Boldening
+.pinDiv p {
+  text-align: center;
+  font-family: Futura;
+  font-style: bold;
+  font-size: 2rem;
 
+}
+
+.pinDiv button {
+  position: absolute;
+  height: 20px;
+  cursor: url(../images/sup.png), auto;
+}
+
+.savePinDiv  button {
+  cursor: url(../images/sup.png), auto;
+}
