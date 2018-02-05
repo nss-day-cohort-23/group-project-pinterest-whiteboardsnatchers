@@ -38,10 +38,11 @@ angular
     
     $scope.togglePin = function(){
       $scope.mustShow = true;
+      $scope.hideCreatePin = true;
     };
 
     $scope.searchImages = function () {
-      $window.open('https://www.google.com', '_blank');
+      
     };
     
   });
