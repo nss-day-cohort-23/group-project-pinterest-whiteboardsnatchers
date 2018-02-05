@@ -46,12 +46,10 @@ ul {
   height: 15rem;
   margin: 2vw;
   padding: .4vw;
-  border: 1px solid black;
-  border-radius: 11%;
-  cursor: pointer;
-
-  // border: .2vw double darkslateblue;
+  // border-radius: 11%;
+  cursor: pointer; // border: .2vw double darkslateblue;
   // max-width: 18vw;
+  
 .imgBox {
 
       // max-width: 90%;
@@ -62,7 +60,7 @@ ul {
       border-radius: 11%;
 
   
-    }
+    
  
 }
 
@@ -70,28 +68,44 @@ ul {
   cursor: pointer;
 
 
-  border-radius: 11%; // border: .2vw double darkslateblue;
-  // max-width: 18vw
 }
+
   .imgBox {
     // max-width: 90%;
     height: 100%;
     margin: .2em auto;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    border-radius: 11%;
+    // border-radius: 11%;
   }
-  .boardTitle {
-    color: black;
-    -webkit-text-fill-color: white;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-
-      font-size: 1.3rem;
+  .deleteBoardBtn {
+    cursor: pointer;
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 1%;
+    background: none;
+    border: none;
   }
 
+}
 
+.imgBox {
+  // max-width: 90%;
+  height: 100%;
+  margin: .2em auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  // border-radius: 11%;
+}
+
+.boardTitle {
+  color: black;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 1.3rem;
+}
 
 // class for all pins. set up in grid
 .allPins {
@@ -119,6 +133,7 @@ ul {
 .pinDiv img {
   height: auto;
   width: 300px;
+  cursor: url(../images/sup.png), auto;
 }
 
 // Pin Title Font , Centering, and Boldening
@@ -131,10 +146,10 @@ ul {
 
 .pinDiv button {
   position: absolute;
-  cursor: url(../images/sup.png), auto;
 }
 
-.savePinDiv  button {
+
+.savePinDiv button {
   cursor: url(../images/sup.png), auto;
 }
 
