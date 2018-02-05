@@ -52,6 +52,7 @@ ul {
   padding: .4vw;
   border: 1px solid black;
   border-radius: 11%;
+  cursor: pointer;
 
   // border: .2vw double darkslateblue;
   // max-width: 18vw;
@@ -67,6 +68,10 @@ ul {
   
     }
  
+}
+
+.deleteBoardBtn {
+  cursor: pointer;
 }
 
 // class for all pins. set up in grid

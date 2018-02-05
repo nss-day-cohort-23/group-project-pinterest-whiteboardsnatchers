@@ -1,9 +1,12 @@
 <div class>
     <div >
-        <div class='boardPrev' ng-repeat="board in boards" ng-click='redirect(board.id)'>
+        <div class='boardPrev' ng-repeat="board in boards">
         
-            <div class='imgBox' ng-style="{'background-image':'url({{board.image}})'}">
+            <div class='imgBox' ng-click='redirect(board.id)' ng-style="{'background-image':'url({{board.image}})'}">
                {{board.title}}
+            </div>
+            <div>
+                <button class="deleteBoardBtn" ng-click="deleteBoard(board.id)">X</button>
             </div>
           </div>
       </div>
