@@ -5,15 +5,15 @@ angular
   .module("pinterest")
   .controller("BoardCtrl", function ($scope, PinFactory, $routeParams, $window, $route) {
 
-
+    
     PinFactory.getBoardPins()
-      .then(allPins => {
-        if (allPins.length > 0) {
-          console.log(allPins, 'all the pins');
-          $scope.pins = allPins;
-        }
-      });
-
+    .then(allPins => {
+      if (allPins.length > 0) {
+        console.log(allPins, 'all the pins');
+        $scope.pins = allPins;
+      }
+    });
+    
     let boardId = $routeParams.id;
     $scope.pin = {
       link: '',
@@ -22,12 +22,12 @@ angular
     };
     $scope.SavePin = () => {
       PinFactory.addNewPin($scope.pin)
-        .then((data) => {
-          // $window.location.href = '#!/BoardList';
-          
-        });
+      .then((data) => {
+        $route.reload();
+        
+      });
     };
-
+    
     $scope.DeletePin = (pinId) => {
       PinFactory.deletePin(pinId)
       .then(()=>{
@@ -35,5 +35,16 @@ angular
         $route.reload();
       });
     };
+    
+    $scope.togglePin = function(){
+      $scope.mustShow = true;
+      $scope.hideCreatePin = true;
+    };
 
+    $scope.searchImages = function () {
+      
+    };
+    
   });
+
+

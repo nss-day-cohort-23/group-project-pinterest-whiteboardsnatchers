@@ -103,8 +103,11 @@ ul {
 
 .pinDiv button {
   position: absolute;
-  height: 20px;
   cursor: url(../images/sup.png), auto;
 }
 
-.savePinDiv button {}
+.savePinDiv  button {
+  cursor: url(../images/sup.png), auto;
+}
+
+
