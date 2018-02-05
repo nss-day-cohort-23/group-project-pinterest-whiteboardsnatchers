@@ -1,24 +1,17 @@
-// body {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   min-height: 100vh;
-// }
+#welcome {
+  text-align: center;
+  font-family: georgia;
+}
 
-// main {
-//   min-height: 400px;
-//   min-width: 400px;
-//   background: #fff;
-//   padding: 40px 20px;
-//   border-radius: 5px;
-//   box-shadow: 5px 55px 50px -20px #b6b6b6;
-//   width: 70%;
-// }
+.login-container {
+  text-align: center;
+}
 
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 .links {
   display: flex;
   justify-content: space-around;
@@ -29,6 +22,7 @@ ul {
   border-radius: 5px;
   color: rgba(117, 117, 117, 1);
   box-shadow: 5px 10px 20px -20px;
+  margin-top: 1.3em;
 }
 
 .link:hover{
@@ -36,16 +30,15 @@ ul {
 }
 
 .link {
-  // display: inline-block;
   cursor: pointer;
   display: flex;
-  // margin-left: auto;
-  // margin-right: auto;
+  font-family: georgia;
+  padding: .5em;
 }
 
 .navbar {
   background-color: rgba(174, 194, 196, 0.226);
-  // margin-top: 3em;
+  
 }
 
 // class for all pins. set up in grid

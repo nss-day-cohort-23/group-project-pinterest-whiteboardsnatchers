@@ -2,23 +2,14 @@
 
 angular
   .module("pinterest")
-  .controller("NavCtrl", function($scope, $location, $rootScope, $window, UserFactory, BoardFactory) {
+  .controller("NavCtrl", function($scope, $location, $rootScope, $window, UserFactory, BoardFactory, $route) {
 
     $scope.isUserActive = function(viewLocation) {
       return viewLocation === $location.path();
     };
 
     $scope.navItems = [
-     
-      // {
-      //   name: "Login",
-      //   url: "#!/login",
-      //   bang: "!"
-      // },
-      {
-        name: "Logout",
-        url: "#!/logout"
-      },
+    
       {
         name: "Board List",
         url: "#!/BoardList"
@@ -26,6 +17,10 @@ angular
       {
         name: "Add New Board",
         url: "#!/newBoard"
+      },
+      {
+        name: "Logout",
+        url: "#!/logout"
       }
     ];
 
@@ -49,6 +44,8 @@ angular
         UserFactory.googleLogout();
       } else {
         $window.location.href = navUrl;
+        // $route.reload();
+        
       }
     };
   });
