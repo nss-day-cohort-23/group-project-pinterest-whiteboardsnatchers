@@ -1,11 +1,12 @@
-<div>
-    <ul>
-        <li ng-repeat="board in boards">
-            <div>
-                <a ng-href='#!/board/{{board.id}}'>{{board.title}}</a>
+<div class>
+    <div >
+        <div class='boardPrev' ng-repeat="board in boards" ng-click='redirect(board.id)'>
+        
+            <div class='imgBox' ng-style="{'background-image':'url({{board.image}})'}">
+               <p class='boardTitle'>{{board.title}}</p>
             </div>
-        </li>
-    </ul>
+          </div>
+      </div>
 </div>
             
                     

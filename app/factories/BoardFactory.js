@@ -1,36 +1,34 @@
 'use strict';
 
 angular
-    .module('pinterest')
-    .factory('BoardFactory', (FBUrl, $q, $http, UserFactory) => {
+  .module('pinterest')
+  .factory('BoardFactory', (FBUrl, $q, $http) => {
 
-        function addNewBoard(boardTitle) {
-            return $q((resolve, reject) => {
-                $http
-                    .post(`${FBUrl}/boards.json`, JSON.stringify(boardTitle))
-                    .then(data => {
-                        console.log('new board added', data.data);
-                        resolve(data.data);
-                    });
+    function addNewBoard(boardTitle) {
+      return $q((resolve, reject) => {
+        $http
+          .post(`${FBUrl}/boards.json`, JSON.stringify(boardTitle))
+          .then(data => {
+            console.log('new board added', data.data);
+            resolve(data.data);
+          });
+      });
+    }
+
+    function getBoards(cuID) {
+      return $q((resolve, reject) => {
+        $http
+          .get(`${FBUrl}/boards.json?orderBy="uid"&equalTo="${cuID}"`)
+          .then(({ data }) => {
+            let boardArr = Object.keys(data).map(boardKey => {
+              data[boardKey].id = boardKey;
+              return data[boardKey];
             });
-        }
+            resolve(boardArr);
 
-        function getBoards() {
-          UserFactory.getCurrentUser();
-            // console.log(firebase.auth().currentUser, 'current user');
-            return $q((resolve, reject) => {
-                $http
-                    .get(`${FBUrl}/boards.json?orderBy="uid"&equalTo="${UserFactory.getCurrentUser()}"`)
-                    .then(({ data }) => {
-                        let boardArr = Object.keys(data).map(boardKey => {
-                            data[boardKey].id = boardKey;
-                            return data[boardKey];
-                        });
-                        console.log(boardArr, 'boardArr');
-                        resolve (boardArr);
+          });
+      });
+    }
 
-                    });
-            });
-        }
-        return { addNewBoard, getBoards };
-    });
+    return { addNewBoard, getBoards };
+  });

@@ -25,7 +25,7 @@ ul {
   margin-top: 1.3em;
 }
 
-.link:hover{
+.link:hover {
   color: rgba(85, 172, 238, 1);
 }
 
@@ -38,7 +38,31 @@ ul {
 
 .navbar {
   background-color: rgba(174, 194, 196, 0.226);
-  
+}
+
+.boardPrev {
+  display: inline-block;
+  width: 27%;
+  height: 15rem;
+  margin: 2vw;
+  padding: .4vw;
+  border-radius: 11%; // border: .2vw double darkslateblue;
+  // max-width: 18vw;
+  .imgBox {
+    // max-width: 90%;
+    height: 100%;
+    margin: .2em auto;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 11%;
+  }
+  .boardTitle {
+    color: black;
+    -webkit-text-fill-color: white;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
 }
 
 // class for all pins. set up in grid
@@ -49,7 +73,7 @@ ul {
 }
 
 // class for individual pins. also set up in grid for button, img and title.
-.pinDiv{
+.pinDiv {
   display: grid;
   grid-template-rows: 3;
   border: 10px solid grey;
@@ -57,25 +81,28 @@ ul {
   height: 450px;
   width: 420px;
 }
+
 // image pin sizing
-.pinDiv img {
+.pinDiv a {
   margin-left: auto;
   margin-right: auto;
+}
+
+.pinDiv img {
   height: auto;
   width: 300px;
 }
+
 // Pin Title Font , Centering, and Boldening
 .pinDiv p {
   text-align: center;
   font-family: Futura;
   font-style: bold;
   font-size: 2rem;
-
 }
 
 .pinDiv button {
   position: absolute;
-  // height: 20px;
   cursor: url(../images/sup.png), auto;
 }
 
@@ -83,6 +110,4 @@ ul {
   cursor: url(../images/sup.png), auto;
 }
 
-.addPinButton{
-  
-}
+
