@@ -10,11 +10,11 @@ angular
 
     $scope.navItems = [
      
-      {
-        name: "Login",
-        url: "#!/login",
-        bang: "!"
-      },
+      // {
+      //   name: "Login",
+      //   url: "#!/login",
+      //   bang: "!"
+      // },
       {
         name: "Logout",
         url: "#!/logout"

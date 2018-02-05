@@ -4,7 +4,17 @@ ul {
 
 .links {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  height: 46px;
+  align-items: 0 10px;
+  padding: 0 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  color: #757575;
+  box-shadow: 5px 10px 20px -20px; }
+
+.link:hover {
+  color: #55acee; }
 
 .link {
   cursor: pointer;
