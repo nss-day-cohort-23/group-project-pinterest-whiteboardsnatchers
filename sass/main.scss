@@ -55,9 +55,13 @@ ul {
   width: 420px;
 }
 // image pin sizing
-.pinDiv img {
+.pinDiv a {
   margin-left: auto;
   margin-right: auto;
+
+}
+
+.pinDiv img {
   height: auto;
   width: 300px;
 }
@@ -77,5 +81,5 @@ ul {
 }
 
 .savePinDiv  button {
-  cursor: url(../images/sup.png), auto;
+  
 }
