@@ -47,7 +47,8 @@ ul {
   margin: 2vw;
   padding: .4vw;
   border-radius: 11%; // border: .2vw double darkslateblue;
-  // max-width: 18vw;
+  // max-width: 18vw
+}
   .imgBox {
     // max-width: 90%;
     height: 100%;
@@ -62,8 +63,10 @@ ul {
     /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+
+      font-size: 1.3rem;
   }
-}
+
 
 // class for all pins. set up in grid
 .allPins {
