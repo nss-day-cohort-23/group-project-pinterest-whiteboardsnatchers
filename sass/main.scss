@@ -68,7 +68,7 @@ ul {
 
 .deleteBoardBtn {
   cursor: pointer;
-}
+
 
   border-radius: 11%; // border: .2vw double darkslateblue;
   // max-width: 18vw
@@ -138,4 +138,10 @@ ul {
   cursor: url(../images/sup.png), auto;
 }
 
-
+.main{
+  background: linear-gradient(150deg, rgb(151, 255, 31), #49a9f5) !important;
+  min-height: calc(100vh - 100px) !important;
+  background-size: auto;
+  margin: 50px;
+  background-position: fixed;
+}
