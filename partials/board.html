@@ -1,7 +1,6 @@
 <label>
-
   Add Pin
-  <input type="checkbox" ng-model="mustShow" />
+  <input type="checkbox" value="Add Me" ng-model='mustShow' />
 </label>
 <br />
 <div ng-show="mustShow">
@@ -18,15 +17,13 @@
     </div>
   </div>
 </div>
-
-  <div ng-repeat="pin in pins">
-
-    <div class='pinDiv'>
-
-      <p>{{pin.title}}</p>
+<div class="allPins">
+  <div class='pinDiv' ng-repeat="pin in pins | filter: searchTerm.searchTerm">
+    <p>{{pin.title}}</p>
+    <!-- added a tag to direct user to source of image -->
+    <a href="{{pin.link}}">
       <img src='{{pin.link}}'>
-      <button ng-click='DeletePin(pin.id)'>Delete</button>
-    </div>
+    </a>
+    <button ng-click='DeletePin(pin.id)'>X</button>
   </div>
-
-
+</div>
