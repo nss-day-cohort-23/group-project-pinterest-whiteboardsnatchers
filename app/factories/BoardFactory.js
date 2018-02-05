@@ -30,5 +30,18 @@ angular
       });
     }
 
-    return { addNewBoard, getBoards };
+    function deleteBoard(boardId) {
+      return $q((resolve, reject) => {
+        $http
+          .delete(`${FBUrl}/boards/${boardId}.json`)
+          .then(() => {
+            resolve();
+          })
+          .catch(err => {
+            reject(err);
+          });
+      });
+    }
+
+    return { addNewBoard, getBoards, deleteBoard };
   });
