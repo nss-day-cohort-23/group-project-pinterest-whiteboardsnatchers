@@ -3,7 +3,7 @@
         <div class='boardPrev' ng-repeat="board in boards" ng-click='redirect(board.id)'>
         
             <div class='imgBox' ng-style="{'background-image':'url({{board.image}})'}">
-               {{board.title}}
+               <p class='boardTitle'>{{board.title}}</p>
             </div>
           </div>
       </div>
